@@ -1,0 +1,20 @@
+any2mp3.py
+
+ usage: any2mp3.py <files>
+
+I use this script to normalize sound volume
+and convert music files to mp3 before uploading
+to my phone. It calls the following external programs:
+
+ffmpeg - http://www.ffmpeg.org/
+normalize - http://normalize.nongnu.org/
+midentify - http://www.mplayerhq.hu/
+lame - http://lame.sourceforge.net/
+
+Example:
+
+ $ any2mp3.py Music/*.ogg
+
+This will convert all ogg-files in the Music/ subdir
+into mp3-files in the current directory. Bitrate will
+be chosen automatically.
