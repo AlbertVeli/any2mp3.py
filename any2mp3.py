@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #
-# usage: any2mp3.py Music/*
+# usage: any2mp3.py <file [more files]>
 #
 # I use this script to normalize sound volume
 # and convert music files to mp3 before uploading
@@ -11,14 +11,18 @@
 # midentify - http://www.mplayerhq.hu/
 # lame - http://lame.sourceforge.net/
 #
+# Example:
+#
+# $ any2mp3.py Music/*
+#
 # The command above take all files (not directories)
 # in the Music/ directory, normalizes them and
 # encodes new mp3-files into the current directory.
 #
-# Warning. If you just give * as argument and
-# there are mp3-files in the current directory
-# they will be overwritten. Put the original mp3:s
-# in another directory if you want to keep them.
+# Warning. If you have the original files in mp3-format
+# in the current directory they may be overwritten.
+# Put the original mp3:s in a different directory if
+# you want to keep the originals.
 #
 ####################################################
 
@@ -26,7 +30,12 @@ import sys
 import os
 import re
 
-# Recognized suffixes
+# Recognized suffixes.
+# Actually the program works with all types of files
+# recognized by ffmpeg. Like .avi, .mov, .flv, .mp4 and so on.
+# Add them to the suffixes list if you want to
+# rip audio from video files into mp3-files.
+#suffixes = [ '.mp3', '.wav', '.ogg', '.flac', '.avi', '.flv', '.mov', '.mp4', '.mpg', '.mpeg' ]
 suffixes = [ '.mp3', '.wav', '.ogg', '.flac']
 #bitrates = [ '128', '160', '192', '224', '256', '320']
 bitrates = [ '128', '160', '192', '224' ]
