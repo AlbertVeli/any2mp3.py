@@ -35,8 +35,8 @@ import re
 # recognized by ffmpeg. Like .avi, .mov, .flv, .mp4 and so on.
 # Add them to the suffixes list if you want to
 # rip audio from video files into mp3-files.
-#suffixes = [ '.mp3', '.wav', '.ogg', '.flac', '.avi', '.flv', '.mov', '.mp4', '.mpg', '.mpeg', '.m4v', '.mkv' ]
-suffixes = [ '.mp3', '.wav', '.ogg', '.flac']
+suffixes = [ '.mp3', '.wav', '.ogg', '.flac', '.avi', '.flv', '.mov', '.mp4', '.mpg', '.mpeg', '.m4v', '.mkv' ]
+#suffixes = [ '.mp3', '.wav', '.ogg', '.flac']
 #bitrates = [ '128', '160', '192', '224', '256', '320']
 bitrates = [ '128', '160', '192', '224' ]
 
@@ -156,3 +156,6 @@ for arg in sys.argv:
         out = outname(arg)
         print "%s%d/%d%s: %s -> %s" %(BLUE, curr, total, ENDC, arg, out)
         normalize_encode_mp3(arg, out)
+
+os.system('rm -f tmp.wav')
+
